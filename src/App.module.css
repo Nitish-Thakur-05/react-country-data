@@ -1,0 +1,175 @@
+.hide {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    --background-color: white;
+    --color: black;
+    --elements-color: white;
+    --input-color: white;
+    background-color: var(--background-color);
+    color: var(--color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Nunito Sans;
+    min-height: 100vh;
+}
+
+:global(body.dark) {
+    --background-color: hsl(207, 26%, 17%);
+    --color: white;
+    --elements-color: hsl(209, 23%, 22%);
+    --input-color: hsl(0, 0%, 52%);
+    --btn-text-color: rgba(255, 255, 255, 0.72);
+    --btn-color:  hsl(0, 0%, 52%);
+}
+
+.home-main {
+    margin-top: 100px;
+    margin-bottom: 3%;
+    max-width: 90%;
+    margin-inline: auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-self: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color);
+    background-color: var(--elements-color);
+    transition: all 0.2s ease-in-out;
+    max-width: 300px;
+    max-height: max-content;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+}
+
+.card-text {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.card-text p {
+    margin-block: 5px;
+}
+
+.card-text h3 {
+    margin-block: 16px;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.tools input {
+    width: 30%;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+    padding-left: 50px;
+    font-size: 100%;
+    background-color: var(--input-color);
+    color: var(--color);
+}
+
+.tools input::placeholder {
+    color: var(--color);
+}
+
+.tools i {
+    position: absolute;
+    left: 15px;
+}
+
+.tools select {
+    padding-left: 15px;
+    width: 15%;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+    height: 45px;
+    background-color: var(--input-color);
+    color: var(--color);
+}
+
+.tools select option {
+    max-width: 100%;
+}
+
+.errmsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: red;
+    font-size: 100%;
+    text-wrap: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* media */
+@media screen and (max-width: 900px) {
+    .tools input {
+        width: 100%;
+    }
+
+    option {
+        width: 100%;
+    }
+    
+    .tools i {
+        bottom: 80px;
+    }
+
+    .tools select {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 478px) {
+    .card{
+        max-width: 100%;
+    }
+}

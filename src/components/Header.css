@@ -1,0 +1,40 @@
+header {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: var(--elements-color);
+    color: var(--color);
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin-inline: auto;
+}
+
+.header-content a {
+    font-weight: 800;
+    font-size: 28px;
+    margin-block: 15px;
+    text-wrap: nowrap;
+    color: var(--color);
+    text-decoration: none;
+}
+
+header p {
+    font-weight: 600;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 900px) {
+    .header-content a {
+        font-size: 20px;
+    }
+
+}
