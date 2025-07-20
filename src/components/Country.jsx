@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Spinner from './Spinner'
-import styles from './country.module.css'
+import styles from './Country.module.css'
 import {useLocation, useNavigate, useParams } from 'react-router-dom'
 import BorderCountry from './BorderCountry.jsx'
 
