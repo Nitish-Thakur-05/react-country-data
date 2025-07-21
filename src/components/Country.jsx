@@ -3,6 +3,7 @@ import Spinner from './Spinner'
 import styles from './Country.module.css'
 import {useLocation, useNavigate, useParams } from 'react-router-dom'
 import BorderCountry from './BorderCountry.jsx'
+import Error from './Error.jsx'
 
 export default function Country() {
     const queryData =useParams()
@@ -81,7 +82,7 @@ export default function Country() {
     }
 
     if(countryNotFound) {
-        return <h3 style={{marginTop: '80px'}}>Country not found</h3>
+        navigate('/error')
     }
  
   return (

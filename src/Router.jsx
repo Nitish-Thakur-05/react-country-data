@@ -3,6 +3,7 @@ import { Home } from "./components/Home";
 import Country from "./components/Country";
 import App from "./App";
 import Error from "./components/Error";
+import NoHeader from "./components/NoHeader";
 
 const Router = () => {
   return (
@@ -12,7 +13,11 @@ const Router = () => {
                 <Route index element={<Home />}/>
                 <Route path=":country" element={<Country />}/>
             </Route>
-                <Route path="*" element={<Error />}/>
+
+            <Route element={<NoHeader />}>
+              <Route path="/error" element={<Error />}/>
+            </Route>
+            <Route path="*" element={<Error />}/>
         </Routes>
     </BrowserRouter>
   )

@@ -4,12 +4,14 @@ import styles from '../App.module.css'
 import CardContainer from './CardContainer.jsx'
 import { useEffect, useRef, useState } from 'react'
 import HomePageShimmer from './HomePageShimmer.jsx'
+import Error from './Error.jsx'
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+  const navigate = useNavigate()
   const [countryData, setCountryData] = useState(null)
   const [filteredCountry, setFilteredCountry] = useState([])
   const [showLoader, setShowLoader] = useState(true)
-  const [unableToLoadData, setUnableToLoadData] = useState(false)
   const timeRef = useRef(null)
 
   useEffect(() => {
@@ -23,8 +25,8 @@ export const Home = () => {
         setFilteredCountry(mydata)
         setShowLoader(false)
     }) .catch (() => {
-        setUnableToLoadData(true)
         setShowLoader(false)
+        navigate('/error')
     })
   }, [])
   
@@ -76,7 +78,7 @@ export const Home = () => {
               filteredCountry.length != 0 ? (filteredCountry.map((curr, i) => (
                 <CardContainer key={i} imageSrc={curr.flags?.svg} countryName={curr.name.common} totalPopulation={curr.population.toLocaleString('en-IN')} region={curr.region} capital={curr.capital?.[0] || "N/A"} data={curr} continent={curr.continents} />
               ))
-              ) : unableToLoadData ? <p style={{color: 'red'}}>Something Went Wrong</p> : (
+              ) :(
                 <p>No country Found</p>
               )
             )

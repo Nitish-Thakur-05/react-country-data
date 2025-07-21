@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.imgContainer {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container p, .container h1 {
+    text-align: center;
+}
+
+.imgContainer img {
+  max-width: 100%;
+}
+
+.container button {
+    margin-top: 20px;
+    width: 80px;
+    color: white;
+    background-color: #007bff;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.container button:hover {
+  box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+  transform: scale(1.02);
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+}
