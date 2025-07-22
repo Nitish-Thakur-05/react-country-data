@@ -34,7 +34,7 @@ body {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     align-self: center;
     gap: 30px;
     margin-top: 40px;
@@ -75,6 +75,9 @@ body {
 
 .card-text h3 {
     margin-block: 16px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tools {
